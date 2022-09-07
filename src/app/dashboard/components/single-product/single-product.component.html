@@ -1,0 +1,27 @@
+
+
+
+<div class="item">
+
+    <div class="itemProd">
+        <div class="img">
+            <img *ngIf="product.img1" [src]="product.img1" [alt]="product.name" class="maxImg">
+        </div>
+    
+        <div class="props">
+            <h4 class="nameProduct">{{ product.name | uppercase }}</h4>
+            <h5 class="dollar">$ <span class="span">{{ product.price }}</span></h5>
+            <p>{{ product.desc }}</p>
+            <span *ngIf="wasAdded"
+                  class="text-info mb-2 animate__animated animate__fadeIn animate__faster"
+            >
+                {{ product.name }} agregado
+            </span>
+        </div>
+
+    </div>
+    
+    <button class="btn btn-primary" (click)="addToCart($event)" [id]="product.id" >Montar en carrito</button>
+
+</div>
+
