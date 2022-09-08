@@ -100,3 +100,8 @@ ul {
     display: flex;
     flex-direction: row;
 }
+
+.prodsBelongCate {
+    display: flex;
+    flex-wrap: wrap;
+}

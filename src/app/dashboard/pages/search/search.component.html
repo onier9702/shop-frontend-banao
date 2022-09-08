@@ -11,10 +11,12 @@
     <!-- <div class="divMain"
          *ngIf="foundProdsFromSearch.length > 0"
     > -->
-    <div class="divOneProd"
-         *ngFor="let prod of foundProdsFromSearch"
-    >
-        <app-single-product  [product]="prod" ></app-single-product>
+    <div class="founded">
+        <div class="divOneProd"
+             *ngFor="let prod of foundProdsFromSearch"
+        >
+            <app-single-product  [product]="prod" ></app-single-product>
+        </div>
     </div>
     <!-- </div> -->
 

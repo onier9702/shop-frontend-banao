@@ -1,12 +1,17 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Product } from '../../product/interfaces/product-interfaces';
 import { ProductsService } from '../../product/products.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { catchError, map, Observable, of, tap } from 'rxjs';
+import { Email } from '../interfaces/email.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
+  private _baseUrl = environment.baseUrl;
   cart: Product[] = [];
   allProducts: Product[] = [];
   private _sameProd: boolean = false;
@@ -16,7 +21,9 @@ export class CartService {
     return [...this.cart];
   }
 
-  constructor( private prodService: ProductsService ) {
+  constructor( private prodService: ProductsService,
+      private http: HttpClient
+    ) {
     prodService.initProds()
       .subscribe( resp => {
         if ( resp.total >  0 ) {
@@ -54,7 +61,7 @@ export class CartService {
     // adding a product if both ID are equal
     if ( check ) {
       this.allProducts.forEach( p => {
-        if ( p.id == id ) {
+        if ( p.id === id ) {
           this.cart.push( p );
         }
       } )
@@ -67,6 +74,19 @@ export class CartService {
   takeOffProductOfCart( id: string ) {
     this.cart = this.cart.filter( p => p.id !== id );
     localStorage.setItem('cart', ( JSON.stringify(this.cart) ) );
+  }
+
+  // Email, sale request
+  sendEmailRequest( body: object ): Observable<Email> {
+    const url = `${this._baseUrl}/email/`;
+    return this.http.post<Email>( url, body )
+      .pipe(
+        tap( resp => {
+          console.log(resp);
+        }),
+        map( resp => resp),
+        catchError( err => of(err.error.msg) )
+      )
   }
 
 

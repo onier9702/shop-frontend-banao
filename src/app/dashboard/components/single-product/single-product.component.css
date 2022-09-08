@@ -24,7 +24,8 @@
 h4 {
     color: #03045e;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0;
+    /* margin-bottom: 5px; */
 }
 
 /* Genearl */
@@ -38,7 +39,7 @@ h5 {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     width: 100%;
 }
 
@@ -64,6 +65,10 @@ h5 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.props .spanMsg {
+    margin: 0px;
+    padding: 0px;
 }
 
 .props, .img {  

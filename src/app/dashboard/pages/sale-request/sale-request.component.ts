@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../../product/interfaces/product-interfaces';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sale-request',
@@ -53,9 +54,20 @@ export class SaleRequestComponent implements OnInit {
 
   sendRequest() {
     const data = this.myform.value;
-    data.cart = this.cart;
+    
+    let emailCart: any = [];
+    this.cart.forEach( (p: any) => emailCart.push( {name: p.name} ) );
+    data.cart = emailCart;
     console.log(data);
     // TODO: decide which library will be used to send sale request
+    this.cartService.sendEmailRequest( data )
+      .subscribe( resp => {
+        if ( resp.ok ) {
+          Swal.fire( 'Email', 'Solicitud de compra recibida', 'success' );
+        } else {
+          Swal.fire('Error', resp.toString(), 'error');
+        }
+      })
   }
 
 }
