@@ -27,12 +27,16 @@ label {
 
 input {
     /* margin-bottom: 20px; */
-    width: 75%;
+    width: 100%;
 }
 .field {
     margin-bottom: 20px;
 }
 
+.divBtn {
+    display: flex;
+    justify-content: center;
+}
 button {
     margin-top: 10px;
     width: 75%;

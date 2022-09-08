@@ -14,8 +14,8 @@ export class LoginComponent  {
   public emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
   myform: FormGroup = this.fb.group({
-    'email': [ 'test1@gmail.com', [ Validators.required, Validators.pattern(this.emailPattern) ] ],
-    'password': [ '123456', [ Validators.required, Validators.minLength(6) ] ],
+    'email': [ '', [ Validators.required, Validators.pattern(this.emailPattern) ] ],
+    'password': [ '', [ Validators.required, Validators.minLength(6) ] ],
   })
 
   constructor( private fb: FormBuilder, 
