@@ -33,13 +33,22 @@ export class LoginComponent  {
     // console.log(this.myform.value);
     // const { email, password } = this.myform.value;
     const { email, password  } = this.myform.value;
-    
+    Swal.fire( {
+      title: 'Cargando...',
+      text: 'Depende de la conexion',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    } );
     this.authService.login( email, password )
       .subscribe( resp => {
         if ( resp.user ) {
           console.log(resp);
+          Swal.close();
           this.router.navigateByUrl('/user/');
         } else {
+          Swal.close();
           Swal.fire('Error', resp , 'error' );
         }
       } )

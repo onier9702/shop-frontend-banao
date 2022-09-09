@@ -33,12 +33,21 @@ export class RegisterComponent  {
   register() {
     
     const { name, email, password, mobile } = this.myform.value;
-    
+    Swal.fire( {
+      title: 'Cargando...',
+      text: 'Depende de la conexion',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    } );
     this.authService.register( name, email, password, mobile )
       .subscribe( resp => {
         if ( resp.user ) {
+          Swal.close();
           this.router.navigateByUrl('/user/profile');
         } else {
+          Swal.close();
           Swal.fire( 'Error', resp, 'error' );
         }
       } )

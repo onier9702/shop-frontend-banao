@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 
 import { Product } from '../../../product/interfaces/product-interfaces';
@@ -21,7 +20,6 @@ export class SingleProductComponent implements OnInit {
   isOpenModal: boolean = false;
 
   constructor( private cartService: CartService,
-    public dialogRef: MatDialog,
 
     ) { }
 

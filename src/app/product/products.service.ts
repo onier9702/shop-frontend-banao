@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, Subject, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 import { AllProds, Product, SingleProduct, Search, Result } from './interfaces/product-interfaces';
 import { Upload } from './interfaces/upload-interfaces';
 
@@ -49,6 +50,14 @@ export class ProductsService {
   // Load All Prods From DB 
   loadAllProducts(): Observable<AllProds> {
     const url = `${this._baseUrl}/products/`;
+    Swal.fire( {
+      title: 'Cargando...',
+      text: 'Depende de la conexion',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    } );
     return this.http.get<AllProds>( url )
       .pipe(
         tap( resp => {
@@ -58,6 +67,7 @@ export class ProductsService {
               this.allProducts.push( p );
             } )
           }
+          Swal.close();
         } )
       )
 

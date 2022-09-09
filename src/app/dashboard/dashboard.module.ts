@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MaterialModule } from '../material/material.module'
+import { SharedModule } from '../shared/shared.module';
+
 
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
@@ -32,7 +32,6 @@ import { ModalComponent } from './components/modal/modal.component';
     ReactiveFormsModule,
     DashboardRoutingModule,
     SharedModule,
-    MaterialModule
   ], 
   exports: [
     SingleProductComponent,

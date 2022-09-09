@@ -31,7 +31,7 @@
         
         
         <form [formGroup]="selectForm" (ngSubmit)="goToUpdate()" >
-            <h4 *ngIf="!wantToUpdate" >Seleccione Producto</h4>
+            <h6 *ngIf="!wantToUpdate" >Seleccione Producto</h6>
             <select name="" id="" 
                     class="form-control"
                     formControlName="selectedProduc"

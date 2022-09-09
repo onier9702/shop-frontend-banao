@@ -21,19 +21,18 @@
         width: 28vw;
     }
 }
-h4 {
+h6 {
     color: #03045e;
-    font-weight: bold;
     margin: 0;
+    padding: 0px 0px 5px 0px;
     /* margin-bottom: 5px; */
 }
 
 /* Genearl */
-h5 {
-    font-size: 18px;
+/* h6 {
     margin: 0px;
     padding: 0px;
-}
+} */
 
 .itemProd {
     display: flex;
@@ -103,5 +102,5 @@ h5 {
 
 .span {
     color: #0077b6;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
