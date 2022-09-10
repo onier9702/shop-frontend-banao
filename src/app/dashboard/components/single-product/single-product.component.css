@@ -104,3 +104,9 @@ h6 {
     color: #0077b6;
     /* font-size: 18px; */
 }
+
+/* Modal */
+.imgModal {
+    max-height: 180px;
+    width: 150px;
+}

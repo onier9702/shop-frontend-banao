@@ -10,11 +10,17 @@ export class ModalService {
   subject = new BehaviorSubject<boolean>(this.condition);
   subjectChange = this.subject.asObservable();
 
+  
+
   constructor() { }
 
   emit() {
     this.subject.next( !this.condition );
     this.condition = !this.condition;
+  }
+
+  putConditionInFalse() {
+    this.condition = false;
   }
 
 
