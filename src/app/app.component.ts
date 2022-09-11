@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from "@ngx-translate/core";
+
 import { ProductsService } from './product/products.service';
 import { CategoriesService } from './category/categories.service';
 
@@ -10,10 +12,23 @@ import { CategoriesService } from './category/categories.service';
 export class AppComponent implements OnInit{
   title = 'shopApp';
 
-  constructor( private prodServ: ProductsService, private cateServ: CategoriesService ) {
+  supportLanguages = ['en', 'es', 'fr'];
+
+  constructor( private prodServ: ProductsService,
+               private cateServ: CategoriesService, 
+               private translateService: TranslateService
+    ) {
+    console.log('App Component');
     this.prodServ.loadAllProducts().subscribe();
     this.cateServ.loadAllCategories().subscribe();
-    console.log('App Component');
+
+    // Languages Settings
+    this.translateService.addLangs( this.supportLanguages );
+    this.translateService.setDefaultLang('es');
+
+    // const browserLang = this.translateService.getBrowserLang() || 'en';  // to get browser lang
+    // this.translateService.use( browserLang );
+
   }
 
   ngOnInit(): void {

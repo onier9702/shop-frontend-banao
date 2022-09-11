@@ -6,6 +6,7 @@ import { ChooseNavbarComponent } from './chooseNavbar/choose-navbar/choose-navba
 import { MobileNavbarComponent } from './mobileNavbar/mobile-navbar/mobile-navbar.component';
 import { NormalNavbarComponent } from './normalNavbar/normal-navbar/normal-navbar.component';
 import { ErrMsgDirective } from './directives/err-msg.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -19,6 +20,7 @@ import { ErrMsgDirective } from './directives/err-msg.directive';
   imports: [
     CommonModule,
     RouterModule,
+    TranslateModule,
   ],
   exports: [
     ChooseNavbarComponent,

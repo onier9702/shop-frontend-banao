@@ -11,7 +11,7 @@
             <span class="spanMsg" *ngIf="wasAdded"
                   class="text-info mb-2 animate__animated animate__fadeIn animate__faster"
             >
-                {{ product.name }} agregado
+                {{ product.name }} {{ 'app.home.main.span' | translate }}
             </span>
             <h6 class="nameProduct">{{ product.name | uppercase }}</h6>
             <h6 class="dollar">$ <span class="span">{{ product.price }}</span></h6>
@@ -21,7 +21,7 @@
 
     </div>
     
-    <button class="btn btn-primary" (click)="addToCart($event)" [id]="product.id" >Montar en carrito</button>
+    <button class="btn btn-primary" (click)="addToCart($event)" [id]="product.id" >{{ 'app.home.main.button' | translate }}</button>
 
 </div>
   

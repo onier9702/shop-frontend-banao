@@ -16,7 +16,7 @@
                 <div class="divInputIcon">
                     <input type="text"
                            formControlName="terminus"
-                           placeholder="Buscar Producto..."
+                           placeholder="{{ 'app.home.main.input' | translate }}"
                     >
                     <i class="bi bi-search icon" (click)="search()" ></i>
                 </div>
@@ -48,9 +48,9 @@
 
     <footer class="footer">
         <ul>
-            <li> <a routerLink="/footer/contactUs/">Contactarnos</a></li>
-            <li> <a routerLink="/footer/developer/">Desarrollador</a></li>
-            <li> <a routerLink="/footer/frecuent-questions/">Preguntas-Frecuentes</a></li>
+            <li> <a routerLink="/footer/contactUs/">{{ 'app.home.footer.contactUs' | translate }}</a></li>
+            <li> <a routerLink="/footer/developer/">{{ 'app.home.footer.developer' | translate }}</a></li>
+            <li> <a routerLink="/footer/frecuent-questions/">{{ 'app.home.footer.frecuent-questions' | translate }}</a></li>
         </ul>
         <div class="divCopyright">
             <p>Copyright 2022 - All right reserved</p>

@@ -6,6 +6,7 @@ import { FooterRoutingModule } from './footer-routing.module';
 import { ContactenosComponent } from './contactenos/contactenos.component';
 import { DesarrolladorComponent } from './desarrollador/desarrollador.component';
 import PreguntasFrecuentesComponent from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import PreguntasFrecuentesComponent from './preguntas-frecuentes/preguntas-frecu
   ],
   imports: [
     CommonModule,
-    FooterRoutingModule
+    FooterRoutingModule,
+    TranslateModule
   ]
 })
 export class FooterModule { }

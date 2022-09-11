@@ -15,6 +15,7 @@ import { SaleRequestComponent } from './pages/sale-request/sale-request.componen
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { SingleCategoryComponent } from './components/single-category/single-category.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ModalComponent } from './components/modal/modal.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    TranslateModule,
     DashboardRoutingModule,
     SharedModule,
   ], 

@@ -11,26 +11,58 @@
             *ngIf="isOpen"
         ></i>
     </div>
-    <ul 
         
+
+    <ul 
         [ngClass]=" (isOpen) ? 'active' : '' "
     >
         <div class="link"
-             *ngFor="let item of menuItem"
-             [routerLink]="[item.route]"
+             routerLink="/dashboard/home"
              routerLinkActive="active"
              (click)="closeMenuNavbar()"
-        >
+        ><li>{{ 'app.shared.navbar.home' | translate }} </li>
+        </div>
+        <div class="link"
+             routerLink="/dashboard/categories"
+             routerLinkActive="active"
+             (click)="closeMenuNavbar()"
+        ><li>{{ 'app.shared.navbar.categories' | translate }} </li>
+        </div>
+        <div class="link"
+             routerLink="/auth/login"
+             routerLinkActive="active"
+             (click)="closeMenuNavbar()"
+        ><li>{{ 'app.shared.navbar.login' | translate }} </li>
+        </div>
+        <div class="link"
+             routerLink="/auth/register"
+             routerLinkActive="active"
+             (click)="closeMenuNavbar()"
+        ><li>{{ 'app.shared.navbar.register' | translate }} </li>
+        </div>
+        <div class="link"
+             routerLink="/user/profile"
+             routerLinkActive="active"
+             (click)="closeMenuNavbar()"
+        ><li>{{ 'app.shared.navbar.profile' | translate }} </li>
+        </div>
+
+        <hr>
     
-            <li 
-                
-            >
-                {{ item.text }}
-            </li>
-    
+        <div class="divLanguage">
+            <i class="bi bi-translate">  <span> {{ 'app.shared.language.title' | translate }} </span></i>
+            <div class="lang" *ngFor="let lang of supportLanguages" (click)="selectLang(lang)" >
+                <span>{{lang | uppercase }}</span>
+            </div>
         </div>
     </ul>
+    
 
 </nav>
+
+
 <!-- class="animate__animated animate__fadeIn animate__faster " -->
 <!-- *ngIf="isOpen" -->
+
+<!-- errDirectMsg
+[addClass]="nameClass" -->

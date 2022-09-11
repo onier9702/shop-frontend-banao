@@ -5,7 +5,7 @@
 
 <div class="divCart">
 
-    <h1>Mis Compras</h1>
+    <h1>{{ 'app.cart.h1' | translate }}</h1>
 
     <div class="alert alert-danger m-2"
          *ngIf="!isThereCartProducts"
@@ -13,7 +13,7 @@
         <span 
             class="text-info text-danger"
         >
-            Debe de Agregar algo a su canasta !!!
+            {{ 'app.cart.span-info' | translate }}
         </span>
     </div>
 
@@ -27,14 +27,15 @@
                 </div>
             </div>
             <div class="divButton">
-                <button (click)="unMount($event)" [id]="item.id" >Desmontar</button>
+                <button (click)="unMount($event)" [id]="item.id" >{{ 'app.cart.button-unmount' | translate }}</button>
             </div>
         </li>
     </ul>
 
     <div class="divButtonBuy" *ngIf="isThereCartProducts">
-        <button (click)="saleRequest()" >Solicitar Compra</button>
+        <button (click)="saleRequest()" >{{ 'app.cart.button-request' | translate }}</button>
     </div>
 
 
 </div>
+

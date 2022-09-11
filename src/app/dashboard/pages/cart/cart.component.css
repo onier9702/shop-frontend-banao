@@ -78,8 +78,9 @@ img {
     background-color: #ff8800;
     cursor: pointer;
     height: 40px;
-    width: 90px;
     margin-right: 10px;
+    padding: 4px;
+    width: 100px;
 }
 .divButton button:hover {
     background-color: #ff7b00;

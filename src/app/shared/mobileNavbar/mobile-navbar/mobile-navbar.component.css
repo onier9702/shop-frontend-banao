@@ -3,6 +3,33 @@
     background-color: #00b4d8;
     width: 100vw;
 }
+
+
+
+.divLanguage {
+    display: flex;
+    flex-direction: column;
+}
+.divLanguage i {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.divLanguage .lang {
+    cursor: pointer;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 0px 0px 7px 20px;
+}
+.divLanguage .lang span {
+    padding-left: 10px;
+}
+.divLanguage .lang:hover {
+    background-color: #04829b;
+}
+
+/* Navbar */
 .menuIcon {
     list-style: none;
     margin: 0px 10px;

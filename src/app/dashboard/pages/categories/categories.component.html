@@ -2,7 +2,7 @@
 <div class="divCate">
     
     <div class="divCategory">
-        <h1>Categorias</h1>
+        <h1>{{ 'app.categories.h1' | translate }}</h1>
     </div>
 
     <div class="divSearch">
@@ -10,7 +10,7 @@
             <div class="divInputIcon">
                 <input type="text"
                        formControlName="terminus"
-                       placeholder="Buscar Categoria..."
+                       placeholder="{{ 'app.categories.input' | translate }}"
                 >
                 <i class="bi bi-search icon" (click)="searchCate()" ></i>
             </div>
@@ -30,7 +30,7 @@
 
     <!-- Categories founded -->
     <div class="divFoundCategories" *ngIf="showH3">
-        <h3 class="mb-2" >Categorias Encontradas: </h3>
+        <h3 class="mb-2" >{{ 'app.categories.h3' | translate }}</h3>
         <div class="divUl">
             <ul>
                 <app-single-category *ngFor="let cate of foundCate" [cate]="cate" (id)="getProdsBelongCate($event)" ></app-single-category>
@@ -40,7 +40,7 @@
 
     <!-- Single Category Component Children -->
     <div class="carouselCate" >
-        <span> Todas  <i class="bi bi-arrow-right"></i></span>
+        <span> {{ 'app.categories.span' | translate }}<i class="bi bi-arrow-right"></i></span>
         <div class="divUl">
             <ul>
                 <app-single-category *ngFor="let cate of allCategories" [cate]="cate" (id)="getProdsBelongCate($event)" ></app-single-category>
